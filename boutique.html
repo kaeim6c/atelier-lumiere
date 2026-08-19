@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Boutique — Atelier Lumière</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; padding: 2rem; }
+    .product { border: 1px solid #ddd; padding: 1rem; text-align: center; }
+    .product img { max-width: 100%; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Atelier Lumière</h1>
+    <p>Photographe indépendant — Rennes et alentours</p>
+  </header>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="candidature.html">Candidater</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <h2>Boutique de photographies</h2>
+    <p>Sélectionnez une photographie, puis renseignez vos coordonnées pour valider votre commande.</p>
+    <div class="products">
+      <div class="product">
+        <img src="https://picsum.photos/id/1015/600/400" alt="Paysage montagne">
+        <p>Montagne — 30 €</p>
+        <a href="coordonnees.html?photo=1015">Acheter</a>
+      </div>
+      <div class="product">
+        <img src="https://picsum.photos/id/1016/600/400" alt="Paysage lac">
+        <p>Lac — 30 €</p>
+        <a href="coordonnees.html?photo=1016">Acheter</a>
+      </div>
+      <div class="product">
+        <img src="https://picsum.photos/id/1018/600/400" alt="Paysage forêt">
+        <p>Forêt — 30 €</p>
+        <a href="coordonnees.html?photo=1018">Acheter</a>
+      </div>
+      <div class="product">
+        <img src="https://picsum.photos/id/1019/600/400" alt="Paysage rivière">
+        <p>Rivière — 30 €</p>
+        <a href="coordonnees.html?photo=1019">Acheter</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2026 Atelier Lumière — Tous droits réservés</p>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

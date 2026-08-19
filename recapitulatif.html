@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Récapitulatif — Atelier Lumière</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Atelier Lumière</h1>
+    <p>Photographe indépendant — Rennes et alentours</p>
+  </header>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="candidature.html">Candidater</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <h2>Récapitulatif de votre commande</h2>
+    <p>Photographie sélectionnée : <strong id="photo-recap"></strong></p>
+    <p>Nom : <strong id="nom-recap"></strong></p>
+    <p>Email : <strong id="email-recap"></strong></p>
+    <p>Adresse : <strong id="adresse-recap"></strong></p>
+    <p>Prix : <strong>30 €</strong></p>
+    <p><em>Ceci est une simulation. Aucun paiement n'est réellement effectué.</em></p>
+    <a href="index.html?commande=ok">Passer au paiement (factice)</a>
+  </main>
+  <footer>
+    <p>&copy; 2026 Atelier Lumière — Tous droits réservés</p>
+  </footer>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('photo-recap').textContent = params.get('photo');
+    document.getElementById('nom-recap').textContent = params.get('nom');
+    document.getElementById('email-recap').textContent = params.get('email');
+    document.getElementById('adresse-recap').textContent = params.get('adresse');
+  </script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

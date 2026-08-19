@@ -1,0 +1,42 @@
+﻿name: Eco-audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm install -g @ecoindex/cli
+
+      - name: Start server
+        run: |
+          python3 -m http.server 8000 &
+          sleep 2
+
+      - name: Run EcoIndex audit
+        run: |
+          ecoindex --url http://localhost:8000/index.html --output ecoindex-index.json
+          ecoindex --url http://localhost:8000/boutique.html --output ecoindex-boutique.json
+          ecoindex --url http://localhost:8000/coordonnees.html --output ecoindex-coordonnees.json
+          ecoindex --url http://localhost:8000/recapitulatif.html --output ecoindex-recap.json
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecoindex-results
+          path: ecoindex-*.json
