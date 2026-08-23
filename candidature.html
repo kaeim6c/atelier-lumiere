@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidater à Atelier Lumières</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+  <div class="bande-info">Atelier Lumières étudie les candidatures spontanées — <span data-statut-activite>activité en cours</span></div>
+  <header class="site-header"><div class="header-inner"><a class="logo" href="index.html">Atelier <span>Lumières</span></a><nav class="nav-principale"><ul><li><a href="index.html">Portfolio</a></li><li><a href="boutique.html">Boutique</a></li><li><a href="candidature.html">Candidater</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div></header>
+  <main>
+    <section class="page-entete"><div class="conteneur"><p>Candidature</p><h1>Rejoindre l'atelier.</h1><p>Stage, assistance de prise de vue, retouche, production ou collaboration artistique : envoyez votre candidature spontanée.</p></div></section>
+    <section class="section"><div class="conteneur">
+      <div class="grille-3">
+        <article class="carte"><i class="fa-solid fa-file-arrow-up"></i><h3>Documents acceptés</h3><p>PDF, DOC, DOCX, ODT, TXT, JPG, PNG, ZIP et plusieurs pièces complémentaires.</p></article>
+        <article class="carte"><i class="fa-solid fa-hard-drive"></i><h3>Fichiers volumineux</h3><p>Jusquâ€™à 25 Mo par document afin de transmettre vos portfolios et travaux complets.</p></article>
+        <article class="carte"><i class="fa-solid fa-clock"></i><h3>Réponse</h3><p>Une vérification simulée est lancée après l’envoi avant affichage d’un numéro de dossier.</p></article>
+      </div>
+
+      <div class="formulaire-bloc" style="margin-top:42px">
+        <h2>Déposer une candidature</h2>
+        <p>Ce formulaire est fictif. Les fichiers restent dans votre navigateur et ne sont pas transmis à un serveur.</p>
+        <form id="form-candidature">
+          <div class="champ"><label for="nom">Nom et prénom</label><input id="nom" name="nom" type="text" required></div>
+          <div class="champ"><label for="email">Adresse e-mail</label><input id="email" name="email" type="email" required></div>
+          <div class="champ"><label for="poste">Type de candidature</label><select id="poste" name="poste"><option>Stage</option><option>Assistant·e photographe</option><option>Retouche photo</option><option>Collaboration artistique</option><option>Candidature spontanée</option></select></div>
+          <div class="champ"><label for="presentation">Présentez votre démarche</label><textarea id="presentation" name="presentation" rows="8"></textarea></div>
+
+          <div class="zone-upload">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <strong>Cliquez pour sélectionner vos documents ou glissez-les ici</strong>
+            <p>CV, lettre de motivation, portfolio, références, fichiers de travail — 25 Mo max par fichier.</p>
+            <input id="documents" name="documents" type="file" multiple accept=".pdf,.doc,.docx,.odt,.txt,.jpg,.jpeg,.png,.zip" hidden>
+          </div>
+          <div class="liste-fichiers"></div>
+          <button type="submit">Envoyer ma candidature</button>
+        </form>
+      </div>
+
+      <div id="confirmation-candidature" class="message-confirmation" style="display:none; margin-top:25px">
+        <h2>Candidature enregistrée</h2>
+        <p>Votre message a bien été transmis à notre équipe. Numéro de suivi : <strong id="numero-dossier"></strong></p>
+        <a class="bouton" href="index.html">Retour à l’accueil</a>
+      </div>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="conteneur footer-bas">© 2026 Atelier Lumières — Projet pédagogique fictif.</div></footer>
+  <script>
+    document.getElementById("form-candidature").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const bouton = event.target.querySelector("button[type='submit']");
+      bouton.disabled = true;
+      bouton.textContent = "Vérification de votre dossier…";
+
+      let tentative = 0;
+      const verification = setInterval(() => {
+        tentative += 1;
+        console.log("Vérification simulée de la candidature", tentative);
+
+        if (tentative >= 3) {
+          clearInterval(verification);
+          document.getElementById("numero-dossier").textContent = "AL-" + Math.floor(100000 + Math.random() * 900000);
+          document.getElementById("confirmation-candidature").style.display = "block";
+          bouton.textContent = "Candidature envoyée";
+          window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        }
+      }, 600);
+    });
+  </script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/carousel.js"></script>
+  <script src="assets/js/upload-preview.js"></script>
+  <script src="assets/js/fake-analytics.js"></script>
+  <script src="assets/js/map.js"></script>
+</body>
+</html>
+

@@ -2,41 +2,48 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Récapitulatif — Atelier Lumière</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RÃ©capitulatif â€” Atelier LumiÃ¨re</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
-  <header>
-    <h1>Atelier Lumière</h1>
-    <p>Photographe indépendant — Rennes et alentours</p>
-  </header>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="candidature.html">Candidater</a>
-    <a href="boutique.html">Boutique</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <header class="site-header"><div class="header-inner"><a class="logo" href="index.html">Atelier <span>LumiÃ¨re</span></a><nav class="nav-principale"><ul><li><a href="index.html">Portfolio</a></li><li><a href="boutique.html">Boutique</a></li><li><a href="candidature.html">Candidater</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div></header>
   <main>
-    <h2>Récapitulatif de votre commande</h2>
-    <p>Photographie sélectionnée : <strong id="photo-recap"></strong></p>
-    <p>Nom : <strong id="nom-recap"></strong></p>
-    <p>Email : <strong id="email-recap"></strong></p>
-    <p>Adresse : <strong id="adresse-recap"></strong></p>
-    <p>Prix : <strong>30 €</strong></p>
-    <p><em>Ceci est une simulation. Aucun paiement n'est réellement effectué.</em></p>
-    <a href="index.html?commande=ok">Passer au paiement (factice)</a>
+    <section class="page-entete"><div class="conteneur"><p>Commande</p><h1>RÃ©capitulatif avant paiement</h1><p>Cette page est une simulation pÃ©dagogique : aucun paiement ni donnÃ©e personnelle nâ€™est rÃ©ellement traitÃ©.</p></div></section>
+    <section class="section"><div class="conteneur">
+      <div class="etapes"><div class="etape">1. CoordonnÃ©es</div><div class="etape active">2. RÃ©capitulatif</div><div class="etape">3. Paiement</div></div>
+      <div class="formulaire-bloc">
+        <h2>Votre commande</h2>
+        <p><strong>Photographie :</strong> <span id="photo-recap"></span></p>
+        <p><strong>Nom :</strong> <span id="nom-recap"></span></p>
+        <p><strong>E-mail :</strong> <span id="email-recap"></span></p>
+        <p><strong>TÃ©lÃ©phone :</strong> <span id="telephone-recap"></span></p>
+        <p><strong>Adresse :</strong> <span id="adresse-recap"></span></p>
+        <p><strong>Commentaire :</strong> <span id="commentaire-recap"></span></p>
+        <hr>
+        <p class="prix">Total : 55 â‚¬</p>
+        <p>La plateforme de paiement est fictive et aucune transaction ne peut Ãªtre rÃ©alisÃ©e.</p>
+        <a class="bouton" href="confirmation.html?commande=validee">Passer au paiement factice</a>
+      </div>
+    </div></section>
   </main>
-  <footer>
-    <p>&copy; 2026 Atelier Lumière — Tous droits réservés</p>
-  </footer>
+  <footer class="site-footer"><div class="conteneur footer-bas">Â© 2026 Atelier LumiÃ¨re â€” Projet pÃ©dagogique fictif.</div></footer>
   <script>
     const params = new URLSearchParams(window.location.search);
-    document.getElementById('photo-recap').textContent = params.get('photo');
-    document.getElementById('nom-recap').textContent = params.get('nom');
-    document.getElementById('email-recap').textContent = params.get('email');
-    document.getElementById('adresse-recap').textContent = params.get('adresse');
+    document.getElementById("photo-recap").textContent = (params.get("photo") || "").replaceAll("-", " ");
+    document.getElementById("nom-recap").textContent = params.get("nom") || "";
+    document.getElementById("email-recap").textContent = params.get("email") || "";
+    document.getElementById("telephone-recap").textContent = params.get("telephone") || "";
+    document.getElementById("adresse-recap").textContent = params.get("adresse") || "";
+    document.getElementById("commentaire-recap").textContent = params.get("commentaire") || "";
   </script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/carousel.js"></script>
+  <script src="assets/js/upload-preview.js"></script>
+  <script src="assets/js/fake-analytics.js"></script>
+  <script src="assets/js/map.js"></script>
 </body>
 </html>
+

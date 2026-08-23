@@ -2,58 +2,72 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Contact — Atelier Lumière</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Atelier Lumières</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <style>
-    #map { height: 400px; width: 100%; margin: 2rem 0; }
-  </style>
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
-  <header>
-    <h1>Atelier Lumière</h1>
-    <p>Photographe indépendant — Rennes et alentours</p>
-  </header>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="candidature.html">Candidater</a>
-    <a href="boutique.html">Boutique</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <header class="site-header"><div class="header-inner"><a class="logo" href="index.html">Atelier <span>Lumières</span></a><nav class="nav-principale"><ul><li><a href="index.html">Portfolio</a></li><li><a href="boutique.html">Boutique</a></li><li><a href="candidature.html">Candidater</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div></header>
   <main>
-    <h2>Contact</h2>
-    <p>Vous avez un projet ? Une demande particulière ? N'hésitez pas à me contacter.</p>
-    <div id="map"></div>
-    <form action="confirmation.html" method="get">
-      <div>
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
+    <section class="hero">
+      <img class="hero-image" src="https://picsum.photos/id/1043/2400/1500" alt="Photographe travaillant dans une rue de ville">
+      <div class="conteneur hero-contenu">
+        <p>Contact</p>
+        <h1>Parlons de votre projet.</h1>
+        <p>Un reportage, un portrait, une commande de tirages, une exposition ou un projet éditorial : l'atelier est à votre écoute.</p>
       </div>
-      <div>
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+        <div class="grille-3">
+          <article class="carte"><i class="fa-solid fa-location-dot"></i><h3>Atelier</h3><p>12 rue de la Lumières<br>35000 Rennes</p></article>
+          <article class="carte"><i class="fa-solid fa-envelope"></i><h3>E-mail</h3><p>bonjour@atelier-lumiere.test<br>Réponse sous 48 heures ouvrées.</p></article>
+          <article class="carte"><i class="fa-solid fa-phone"></i><h3>Téléphone</h3><p>02 99 00 00 00<br>Du lundi au vendredi, 9 h à 18 h.</p></article>
+        </div>
+
+        <div class="section-titre" style="margin-top:54px"><div><p>Localisation</p><h2>Venir à l'atelier</h2></div><p>Vous souhaitez nous rendre visite? Voici comment nous trouver</p></div>
+        <div id="map"></div>
+
+        <div class="section-titre" style="margin-top:54px"><div><p>Écrire à l'atelier</p><h2>Votre demande</h2></div></div>
+        <div class="formulaire-bloc">
+          <form action="confirmation.html" method="get">
+            <div class="champ"><label for="nom">Nom</label><input id="nom" name="nom" required></div>
+            <div class="champ"><label for="email">Adresse e-mail</label><input id="email" name="email" type="email" required></div>
+            <div class="champ"><label for="sujet">Sujet</label><select id="sujet" name="sujet"><option>Demande de devis</option><option>Réserver une séance</option><option>Commande de tirage</option><option>Projet éditorial</option><option>Autre demande</option></select></div>
+            <div class="champ"><label for="message">Votre message</label><textarea id="message" name="message" rows="9" required></textarea></div>
+            <button type="submit">Envoyer mon message</button>
+          </form>
+        </div>
       </div>
-      <div>
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+    </section>
+
+    <section class="section section-foncee">
+      <div class="conteneur">
+        <div class="section-titre"><div><p>Dernières réalisations</p><h2>Autres projets à découvrir</h2>
+        <div class="galerie">
+          <img src="https://picsum.photos/id/1044/1800/1200" alt="Paysage de montagne">
+          <img src="https://picsum.photos/id/1045/1800/1200" alt="Rue urbaine">
+          <img src="https://picsum.photos/id/1046/1800/1200" alt="Forêt dense">
+          <img src="https://picsum.photos/id/1047/1800/1200" alt="Bâtiment contemporain">
+          <img src="https://picsum.photos/id/1048/1800/1200" alt="Mer agitée">
+          <img src="https://picsum.photos/id/1049/1800/1200" alt="Paysage ensoleillé">
+          <img src="https://picsum.photos/id/1050/1800/1200" alt="Montagne lointaine">
+          <img src="https://picsum.photos/id/1051/1800/1200" alt="Vue de ville">
+        </div>
       </div>
-      <button type="submit">Envoyer mon message</button>
-    </form>
+    </section>
   </main>
-  <footer>
-    <p>&copy; 2026 Atelier Lumière — Tous droits réservés</p>
-  </footer>
+  <footer class="site-footer"><div class="conteneur footer-grille"><div><h3>Atelier Lumières</h3><p>Projet pédagogique fictif.</p></div><div><h3>Navigation</h3><ul><li><a href="index.html">Accueil</a></li><li><a href="boutique.html">Boutique</a></li></ul></div><div><h3>Contact</h3><ul><li><a href="#">Mentions légales</a></li><li><a href="#">Confidentialité</a></li></ul></div><div><h3>Réseaux</h3><ul><li><a href="#">Instagram</a></li><li><a href="#">LinkedIn</a></li></ul></div></div><div class="conteneur footer-bas">© 2026 Atelier Lumières</div></footer>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script>
-    const map = L.map('map').setView([48.1173, -1.6778], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-    L.marker([48.1173, -1.6778]).addTo(map)
-      .bindPopup('Atelier Lumière — Rennes')
-      .openPopup();
-  </script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/carousel.js"></script>
+  <script src="assets/js/upload-preview.js"></script>
+  <script src="assets/js/fake-analytics.js"></script>
+  <script src="assets/js/map.js"></script>
 </body>
 </html>
+

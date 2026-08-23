@@ -1,27 +1,36 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
-  console.log('Atelier Lumière — script chargé');
+﻿/*
+  Baseline pÃ©dagogique volontairement non optimisÃ©e.
+  Ce script est chargÃ© sur toutes les pages, quelle que soit la fonctionnalitÃ©.
+*/
 
-  const elements = document.querySelectorAll('*');
-  elements.forEach(el => {
-    el.dataset.loaded = 'true';
+document.addEventListener("DOMContentLoaded", () => {
+  const tousLesElements = document.querySelectorAll("*");
+
+  tousLesElements.forEach((element, index) => {
+    element.dataset.initialise = "true";
+    element.dataset.positionGlobale = index;
   });
+
+  document.querySelectorAll("[data-compteur]").forEach((element) => {
+    let valeur = Number(element.dataset.compteur) || 0;
+
+    setInterval(() => {
+      valeur += Math.floor(Math.random() * 4) + 1;
+      element.textContent = valeur.toLocaleString("fr-FR");
+    }, 2000);
+  });
+
+  const titreOriginal = document.title;
 
   setInterval(() => {
-    const now = new Date();
-    document.title = `Atelier Lumière — ${now.toLocaleTimeString()}`;
+    const maintenant = new Date().toLocaleTimeString("fr-FR");
+    document.title = `${titreOriginal} â€” ${maintenant}`;
   }, 1000);
 
-  const images = document.querySelectorAll('img');
-  images.forEach(img => {
-    img.addEventListener('load', () => {
-      console.log('Image chargée', img.src);
-    });
-  });
-
-  const forms = document.querySelectorAll('form');
-  forms.forEach(form => {
-    form.addEventListener('submit', () => {
-      console.log('Formulaire soumis');
+  document.querySelectorAll("form").forEach((formulaire) => {
+    formulaire.addEventListener("submit", () => {
+      console.log("Formulaire soumis", new Date().toISOString());
     });
   });
 });
+

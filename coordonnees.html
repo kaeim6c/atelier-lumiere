@@ -2,50 +2,44 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Coordonnées — Atelier Lumière</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coordonnées — Atelier Lumières</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
-  <header>
-    <h1>Atelier Lumière</h1>
-    <p>Photographe indépendant — Rennes et alentours</p>
-  </header>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="candidature.html">Candidater</a>
-    <a href="boutique.html">Boutique</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <header class="site-header"><div class="header-inner"><a class="logo" href="index.html">Atelier <span>Lumières</span></a><nav class="nav-principale"><ul><li><a href="index.html">Portfolio</a></li><li><a href="boutique.html">Boutique</a></li><li><a href="candidature.html">Candidater</a></li><li><a href="contact.html">Contact</a></li></ul></nav></div></header>
   <main>
-    <h2>Vos coordonnées</h2>
-    <p>Vous avez sélectionné la photographie <strong id="photo-id"></strong>.</p>
-    <form action="recapitulatif.html" method="get">
-      <input type="hidden" id="photo" name="photo">
-      <div>
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom" required>
+    <section class="page-entete"><div class="conteneur"><p>Commande</p><h1>Vos coordonnées</h1><p>Vous finalisez la commande de la photographie sélectionnée dans la boutique.</p></div></section>
+    <section class="section"><div class="conteneur">
+      <div class="etapes"><div class="etape active">1. Coordonnées</div><div class="etape">2. Récapitulatif</div><div class="etape">3. Paiement</div></div>
+      <div class="formulaire-bloc">
+        <h2>Photographie sélectionnée : <span id="photo-selectionnee">chargement…</span></h2>
+        <form action="recapitulatif.html" method="get">
+          <input type="hidden" id="photo" name="photo">
+          <div class="champ"><label for="nom">Nom complet</label><input type="text" id="nom" name="nom" required></div>
+          <div class="champ"><label for="email">Adresse e-mail</label><input type="email" id="email" name="email" required></div>
+          <div class="champ"><label for="telephone">Téléphone</label><input type="tel" id="telephone" name="telephone"></div>
+          <div class="champ"><label for="adresse">Adresse de livraison</label><textarea id="adresse" name="adresse" rows="5" required></textarea></div>
+          <div class="champ"><label for="commentaire">Commentaire de commande</label><textarea id="commentaire" name="commentaire" rows="5"></textarea></div>
+          <button type="submit">Continuer vers le récapitulatif</button>
+        </form>
       </div>
-      <div>
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div>
-        <label for="adresse">Adresse :</label>
-        <textarea id="adresse" name="adresse" rows="3" required></textarea>
-      </div>
-      <button type="submit">Continuer vers le récapitulatif</button>
-    </form>
+    </div></section>
   </main>
-  <footer>
-    <p>&copy; 2026 Atelier Lumière — Tous droits réservés</p>
-  </footer>
+  <footer class="site-footer"><div class="conteneur footer-bas">© 2026 Atelier Lumières — Projet pédagogique fictif.</div></footer>
   <script>
     const params = new URLSearchParams(window.location.search);
-    const photo = params.get('photo');
-    document.getElementById('photo').value = photo;
-    document.getElementById('photo-id').textContent = photo;
+    const photo = params.get("photo") || "photographie non définie";
+    document.getElementById("photo").value = photo;
+    document.getElementById("photo-selectionnee").textContent = photo.replaceAll("-", " ");
   </script>
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/carousel.js"></script>
+  <script src="assets/js/upload-preview.js"></script>
+  <script src="assets/js/fake-analytics.js"></script>
+  <script src="assets/js/map.js"></script>
 </body>
 </html>
+

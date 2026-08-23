@@ -1,0 +1,46 @@
+﻿/* Animations volontairement présentes dans la baseline,
+   mais suffisamment limitées pour préserver l'utilisabilité. */
+
+.carte,
+.carte-produit,
+.carte-actu,
+.temoignage {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carte:hover,
+.carte-produit:hover,
+.carte-actu:hover,
+.temoignage:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 13px 28px rgba(28, 14, 10, 0.16);
+}
+
+.pastille-decoration {
+  animation: flottement-discret 9s ease-in-out infinite alternate;
+}
+
+.hero-image {
+  animation: aucune;
+}
+
+@keyframes flottement-discret {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-7px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -2,55 +2,90 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Boutique — Atelier Lumière</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique — Atelier Lumières</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; padding: 2rem; }
-    .product { border: 1px solid #ddd; padding: 1rem; text-align: center; }
-    .product img { max-width: 100%; }
-  </style>
+  <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
-  <header>
-    <h1>Atelier Lumière</h1>
-    <p>Photographe indépendant — Rennes et alentours</p>
-  </header>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="candidature.html">Candidater</a>
-    <a href="boutique.html">Boutique</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <main>
-    <h2>Boutique de photographies</h2>
-    <p>Sélectionnez une photographie, puis renseignez vos coordonnées pour valider votre commande.</p>
-    <div class="products">
-      <div class="product">
-        <img src="https://picsum.photos/id/1015/600/400" alt="Paysage montagne">
-        <p>Montagne — 30 €</p>
-        <a href="coordonnees.html?photo=1015">Acheter</a>
-      </div>
-      <div class="product">
-        <img src="https://picsum.photos/id/1016/600/400" alt="Paysage lac">
-        <p>Lac — 30 €</p>
-        <a href="coordonnees.html?photo=1016">Acheter</a>
-      </div>
-      <div class="product">
-        <img src="https://picsum.photos/id/1018/600/400" alt="Paysage forêt">
-        <p>Forêt — 30 €</p>
-        <a href="coordonnees.html?photo=1018">Acheter</a>
-      </div>
-      <div class="product">
-        <img src="https://picsum.photos/id/1019/600/400" alt="Paysage rivière">
-        <p>Rivière — 30 €</p>
-        <a href="coordonnees.html?photo=1019">Acheter</a>
-      </div>
+  <div class="bande-info">Expédition des tirages sous 7 à 12 jours ouvrés — <span data-statut-activite>activité en cours</span></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">Atelier <span>Lumières</span></a>
+      <nav class="nav-principale" aria-label="Navigation principale">
+        <ul><li><a href="index.html">Portfolio</a></li><li><a href="boutique.html">Boutique</a></li><li><a href="candidature.html">Candidater</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </nav>
     </div>
+  </header>
+
+  <main>
+    <section class="page-entete">
+      <div class="conteneur">
+        <p>Boutique</p>
+        <h1>Des tirages pour prolonger l’émotion.</h1>
+        <p>Découvrez une sélection de photographies disponibles en plusieurs formats.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="conteneur">
+        <div class="formulaire-bloc">
+          <h2>Filtres de collection</h2>
+          <div class="grille-4">
+            <div class="champ"><label for="collection">Collection</label><select id="collection"><option>Toutes les collections</option><option>Bretagne</option><option>Montagnes</option><option>Ville</option></select></div>
+            <div class="champ"><label for="format">Format</label><select id="format"><option>Tous les formats</option><option>30 à 40 cm</option><option>50 à 70 cm</option><option>70 à 100 cm</option></select></div>
+            <div class="champ"><label for="couleur">Couleur dominante</label><select id="couleur"><option>Toutes</option><option>Bleu</option><option>Vert</option><option>Ocre</option></select></div>
+            <div class="champ"><label for="tri">Trier</label><select id="tri"><option>Nouveautés</option><option>Prix croissant</option><option>Prix décroissant</option></select></div>
+          </div>
+        </div>
+
+        <div class="section-titre" style="margin-top:48px">
+          <div><p>Catalogue</p><h2>Photographies disponibles</h2></div>
+          <p>12 produits chargés.</p>
+        </div>
+
+        <div class="grille-produits">
+          <article class="carte-produit"><img src="https://picsum.photos/id/1011/1800/1300" alt="Montagne dans la brume"><div class="contenu"><h3>Brume sur les crêtes</h3><p>Collection Montagnes</p><p class="prix">45 €</p><a class="bouton" href="coordonnees.html?photo=brume-sur-les-cretes">Acheter</a></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1015/1800/1300" alt="Lac au lever du jour"><div class="contenu"><h3>Premier soleil</h3><p>Collection Horizons</p><p class="prix">55 €</p><a class="bouton" href="coordonnees.html?photo=premier-soleil">Acheter</a></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1016/1800/1300" alt="Lac de montagne"><div class="contenu"><h3>Eaux calmes</h3><p>Collection Lacs</p><p class="prix">45 €</p><a class="bouton" href="coordonnees.html?photo=eaux-calmes">Acheter</a></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1018/1800/1300" alt="Forêt et rivière"><div class="contenu"><h3>La clairière</h3><p>Collection Forêts</p><p class="prix">50 €</p><a class="bouton" href="coordonnees.html?photo=la-clairiere">Acheter</a></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1019/1800/1300" alt="Ville vue de haut"><div class="contenu"><h3>Géométrie urbaine</h3><p>Collection Villes</p><p class="prix">60 €</p><a class="bouton" href="coordonnees.html?photo=geometrie-urbaine">Acheter</a></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1020/1800/1300" alt="Paysage de campagne"><div class="contenu"><h3>Terres bretonnes</h3><p>Collection Bretagne</p><p class="prix">45 €</p><a class="bouton" href="coordonnees.html?photo=terres-bretonnes">Acheter</a></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1021/1800/1300" alt="Forêt en automne"><div class="contenu"><h3>Les sous-bois</h3><p>Collection Forêts</p><p class="prix">50 €</p><a class="bouton" href="coordonnees.html?photo=les-sous-bois">Acheter</a></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1022/1800/1300" alt="Route du désert"><div class="contenu"><h3>Route lointaine</h3><p>Collection Horizons</p><p class="prix">55 €</p><a class="bouton" href="coordonnees.html?photo=route-lointaine">Acheter</a></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1023/1800/1300" alt="Plage lumineuse"><div class="contenu"><h3>Marée basse</h3><p>Collection Littoral</p><p class="prix">45 €</p><a class="bouton" href="coordonnees.html?photo=maree-basse">Acheter</a></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1025/1800/1300" alt="Ciel nuageux"><div class="contenu"><h3>Ciel d’orage</h3><p>Collection Ciels</p><p class="prix">55 €</p><a class="bouton" href="coordonnees.html?photo=ciel-d-orage">Acheter</a></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1026/1800/1300" alt="Montagnes lointaines"><div class="contenu"><h3>Horizon bleu</h3><p>Collection Montagnes</p><p class="prix">60 €</p><a class="bouton" href="coordonnees.html?photo=horizon-bleu">Acheter</a></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1039/1800/1300" alt="Vallée au soleil"><div class="contenu"><h3>Fin de journée</h3><p>Collection Horizons</p><p class="prix">55 €</p><a class="bouton" href="coordonnees.html?photo=fin-de-journee">Acheter</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-foncee">
+      <div class="conteneur">
+        <div class="section-titre"><div><p>Suggestions</p><h2>Vous aimerez également</h2>
+        <div class="grille-4">
+          <article class="carte-produit"><img src="https://picsum.photos/id/1031/1600/1200" alt="Rivière dans la vallée"><div class="contenu"><h3>Le cours d’eau</h3><p class="prix">45 €</p></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1032/1600/1200" alt="Lac en montagne"><div class="contenu"><h3>Silence</h3><p class="prix">50 €</p></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1033/1600/1200" alt="Rochers en montagne"><div class="contenu"><h3>La faille</h3><p class="prix">55 €</p></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1036/1600/1200" alt="Rivière dans les rochers"><div class="contenu"><h3>Après la pluie</h3><p class="prix">45 €</p></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1037/1600/1200" alt="Fleurs de montagne"><div class="contenu"><h3>Fleurs sauvages</h3><p class="prix">40 €</p></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1038/1600/1200" alt="Village dans la vallée"><div class="contenu"><h3>Le village</h3><p class="prix">50 €</p></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1040/1600/1200" alt="Fort en hiver"><div class="contenu"><h3>Hiver doux</h3><p class="prix">45 €</p></div></article>
+          <article class="carte-produit"><img src="https://picsum.photos/id/1041/1600/1200" alt="Côte rocheuse"><div class="contenu"><h3>Roches marines</h3><p class="prix">55 €</p></div></article>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer>
-    <p>&copy; 2026 Atelier Lumière — Tous droits réservés</p>
-  </footer>
+
+  <footer class="site-footer"><div class="conteneur footer-grille"><div><h3>Atelier Lumière</h3><p>Projet pédagogique fictif.</p></div><div><h3>Navigation</h3><ul><li><a href="index.html">Accueil</a></li><li><a href="contact.html">Contact</a></li></ul></div><div><h3>Boutique</h3><ul><li><a href="#">Livraisons</a></li><li><a href="#">Retours</a></li></ul></div><div><h3>Réseaux</h3><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div></div><div class="conteneur footer-bas">© 2026 Atelier Lumière</div></footer>
+
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/carousel.js"></script>
+  <script src="assets/js/upload-preview.js"></script>
+  <script src="assets/js/fake-analytics.js"></script>
+  <script src="assets/js/map.js"></script>
 </body>
 </html>
+
