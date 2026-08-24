@@ -649,7 +649,7 @@ input[type="submit"]:focus {
   }
 
   .galerie img {
-    height: 180px;
+    height: 210px;
   }
 
   .hero {
@@ -692,7 +692,7 @@ input[type="submit"]:focus {
 
   .carte-actu img,
   .carte-produit img {
-    height: 200px;
+    height: 220px;
   }
 
   .etapes {
