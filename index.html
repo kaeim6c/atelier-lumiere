@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Atelier Lumière - Photographe à Rennes</title>
   <meta name="description" content="Portfolio, tirages et prestations du photographe Atelier Lumière à Rennes.">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -30,8 +31,8 @@
       
       <img
   src="assets/images/portfolio/hero-accueil.webp"
-  width="640"
-  height="480"
+  width="1280"
+  height="720"
   decoding="async"
   alt="Rivière de montagne"
 >
@@ -378,10 +379,33 @@
             <h2>Une vidéo pour découvrir l’univers de l’atelier</h2>
           </div>
         </div>
-        <div class="video">
-          <iframe src="https://www.youtube-nocookie.com/embed/Scxs7L0vhZ4?autoplay=0&rel=0" title="Vidéo de présentation Atelier Lumières" allowfullscreen></iframe>
-        </div>
-      </div>
+<div
+  class="video-facade"
+  data-video-id="Scxs7L0vhZ4"
+  data-video-title="Vidéo de présentation Atelier Lumière"
+>
+  <img
+    src="assets/images/portfolio/lac-montagne.webp"
+    width="960"
+    height="540"
+    loading="lazy"
+    decoding="async"
+    alt="Aperçu de la vidéo de présentation Atelier Lumière"
+  >
+
+  <button
+    class="video-facade-bouton"
+    type="button"
+    aria-label="Charger et lire la vidéo de présentation Atelier Lumière"
+  >
+    <span aria-hidden="true">▶</span>
+    Lire la vidéo
+  </button>
+
+  <p class="video-facade-information">
+    La vidéo YouTube est chargée uniquement après votre clic.
+  </p>
+</div>
     </section>
 
     <section class="bande-partenaires" aria-label="Partenaires">
@@ -405,8 +429,7 @@
   <script src="assets/js/gallery.js"></script>
   <script src="assets/js/carousel.js"></script>
   <script src="assets/js/upload-preview.js"></script>
-  <script src="assets/js/fake-analytics.js"></script>
-  <script src="assets/js/map.js"></script>
+  <script src="assets/js/video.js"></script>
 </body>
 </html>
 
